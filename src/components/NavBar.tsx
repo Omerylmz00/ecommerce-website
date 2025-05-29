@@ -22,10 +22,22 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">BARIDA LUMION</h1>
         <div className="space-x-4">
-          <a href="#" className="text-gray-600 hover:text-black">Home</a>
-          <a href="#" className="text-gray-600 hover:text-black">Shop</a>
-          <a href="#" className="text-gray-600 hover:text-black">Contact</a>
-            <a href="#" className="text-gray-600 hover:text-black">About</a>
+        <a href="#" className="relative inline-block text-gray-600 hover:text-black transition-colors duration-300 group">
+          Home
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" className="relative inline-block text-gray-600 hover:text-black transition-colors duration-300 group">
+          Shop
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" className="relative inline-block text-gray-600 hover:text-black transition-colors duration-300 group">
+          Contact
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full"></span>
+        </a>
+        <a href="#" className="relative inline-block text-gray-600 hover:text-black transition-colors duration-300 group">
+          About
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full"></span>
+        </a>
         </div>
       </div>
     </nav>

@@ -7,18 +7,18 @@ export default function ProductCard({ product }: { product: any }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 cursor-pointer"
+      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer p-4"
     >
       <Image
         src={product.image}
         alt={product.name}
         width={400}
-        height={300}
-        className="rounded-t-xl object-cover w-full h-60"
+        height={250}
+        className="rounded-lg object-cover w-full h-56"
       />
-      <div className="p-4 text-center">
-        <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-        <p className="text-gray-600 font-medium">{product.price} ₺</p>
+      <div className="text-center mt-4">
+        <h3 className="text-xl font-bold text-gray-800 mb-1">{product.name}</h3>
+        <p className="text-lg text-gray-700 font-medium">{product.price} ₺</p>
       </div>
     </motion.div>
   );
