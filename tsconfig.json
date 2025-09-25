@@ -35,7 +35,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "src/app/products/[slug]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
