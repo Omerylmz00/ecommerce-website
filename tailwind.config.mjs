@@ -1,0 +1,77 @@
+/** @type {import('tailwindcss').Config} */
+const config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#996c49",
+          100: "#1e150f",
+          200: "#3d2b1d",
+          300: "#5b402c",
+          400: "#79563a",
+          500: "#996c49",
+          600: "#b58765",
+          700: "#c7a58b",
+          800: "#dac3b2",
+          900: "#ece1d8",
+        },
+        secondary: {
+          DEFAULT: "#d2b178",
+          100: "#322611",
+          200: "#634b21",
+          300: "#957132",
+          400: "#c29547",
+          500: "#d2b178",
+          600: "#dbc194",
+          700: "#e4d1af",
+          800: "#ede0c9",
+          900: "#f6f0e4",
+        },
+        dark: {
+          DEFAULT: "#333333",
+          100: "#0a0a0a",
+          200: "#141414",
+          300: "#1f1f1f",
+          400: "#292929",
+          500: "#333333",
+          600: "#5c5c5c",
+          700: "#858585",
+          800: "#adadad",
+          900: "#d6d6d6",
+        },
+        light: {
+          DEFAULT: "#f5f0e9",
+          100: "#42331e",
+          200: "#84663b",
+          300: "#ba9766",
+          400: "#d8c4a8",
+          500: "#f5f0e9",
+          600: "#f7f4ee",
+          700: "#f9f6f2",
+          800: "#fbf9f7",
+          900: "#fdfcfb",
+        },
+        danger: {
+          DEFAULT: "#d65d6d",
+          100: "#310c11",
+          200: "#621822",
+          300: "#932533",
+          400: "#c43145",
+          500: "#d65d6d",
+          600: "#de7c89",
+          700: "#e79da7",
+          800: "#efbec4",
+          900: "#f7dee2",
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

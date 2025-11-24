@@ -1,21 +1,86 @@
 @import "tailwindcss";
 
+/* Tema renklerin */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --raw-umber: #996c49;
+  --ecru: #d2b178;
+  --jet: #333333;
+  --isabelline: #f5f0e9;
+  --indian-red: #d65d6d;
+  --header-dynamic: var(--isabelline);
+  --header-h: 75px;
+  --header-shadow: 0 14px 28px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Next font değişkenini (layout.tsx’te verdiğin --font-body) root’a uygula */
+html {
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
 }
-
-
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  } /* font-sans’ı yukarıda verdik */
+}
+
+.site-header {
+  height: var(--header-h);
+  background-color: var(--isabelline); /* <- sadece scroll sonrası */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0ms,
+    /* renk animasyonu yok -> lag yok */ border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+html[data-transparent-header="true"][data-at-top="true"] .site-header {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html:not([data-at-top="true"]) .site-header {
+  box-shadow: var(--header-shadow);
+  border-color: transparent; /* gölge varken alt çizgiyi gizlemek daha temiz */
+}
+
+.page-shell {
+  padding-top: var(--header-h);
+}
+
+.hero-overlap {
+  margin-top: calc(var(--header-h) * -1);
+  padding-top: var(--header-h);
+}
+
+.perks-swiper .swiper-pagination {
+  position: static; /* altta, akışta */
+  margin-top: 14px;
+}
+
+.perks-swiper .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px !important;
+  border-radius: 9999px;
+  border: 1.5px solid var(--jet);
+  background: transparent;
+  opacity: 0.35;
+}
+
+.perks-swiper .swiper-pagination-bullet-active {
+  background: var(--jet);
+  opacity: 1;
+}
+
+.perks-swiper .swiper-pagination.swiper-pagination-lock {
+  display: none;
 }
